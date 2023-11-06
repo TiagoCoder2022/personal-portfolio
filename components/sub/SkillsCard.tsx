@@ -20,19 +20,9 @@ const SkillsCard = ({ index, title, src }: SkillsContentProps) => {
       transitionSpeed={1500}
       scale={1.02}
       gyroscope={true}
-      className="w-50 green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+      className="w-50 green-pink-gradient p-[1px] rounded-[20px] shadow-card z-[20]"
     >
-      <motion.div
-        whileHover={{
-          position: "relative",
-          zIndex: 1,
-          scale: [1, 1.4, 1.2],
-          rotate: [0, 10, -10, 0],
-          transition: {
-            duration: 0.2,
-          },
-        }}
-      >
+      <motion.div>
         <div className="bg-tertiary rounded-[20px] py-5 px-12 w-[280px] min-h-[280px] flex justify-evenly items-center flex-col">
           <img
             src={src}
