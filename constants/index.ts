@@ -123,13 +123,13 @@ export const Frontend_skill = [
     height: 80,
     title: "Tailwind Css",
   },
-  {
+  /*{
     skill_name: "Material UI",
     Image: "/mui.png",
     width: 80,
     height: 80,
     title: "Material UI",
-  },
+  },*/
   {
     skill_name: "React",
     Image: "/react.png",
@@ -144,13 +144,13 @@ export const Frontend_skill = [
     height: 80,
     title: "Redux",
   },
-  {
+  /*{
     skill_name: "React Query",
     Image: "/reactquery.png",
     width: 80,
     height: 80,
     title: "React Query",
-  },
+  },*/
   {
     skill_name: "Type Script",
     Image: "/ts.png",
