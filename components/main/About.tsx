@@ -3,7 +3,11 @@ import Image from "next/image";
 import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import TitleSection from "./TitleSection";
-import { slideInFromRight, slideInFromTop } from "@/utils/motion";
+import {
+  slideInFromLeft,
+  slideInFromRight,
+  slideInFromTop,
+} from "@/utils/motion";
 
 const TAB_DATA = [
   {
@@ -52,18 +56,22 @@ const About = () => {
     });
   };
   return (
-    <section className="container mx-auto flex flex-col items-center justify-center z-[20]">
-      <TitleSection variants={slideInFromRight(0.8)}>About Me</TitleSection>
+    <section
+      id="about-me"
+      className="container mx-auto flex flex-col items-center justify-center z-[20]"
+    >
+      <TitleSection variants={slideInFromLeft(0.5)}>About Me</TitleSection>
 
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-14 sm:py-16 xl:px-16">
+      <div className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 xl:gap-14 sm:py-16 xl:px-16 about-scyfi">
         <Image
           src="/tiago-profile.jpg"
           width={400}
           height={400}
+          unoptimized
           alt="Profile picture"
           className="object-contain rounded-lg shadow-card"
         />
-        <div className="text-white mt-4 md:mt-0 text-left flex flex-col h-full">
+        <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
           <p className="text-base lg:text-lg">
             I am a Full Stack web developer with a passion for creating
             interactive and responsive web aplications. I have experience

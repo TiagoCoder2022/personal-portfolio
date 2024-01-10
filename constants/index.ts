@@ -94,30 +94,72 @@ export const Socials = [
   },
 ];
 
+export const skill_frontend = [
+  {
+    id: 1,
+    name: "html",
+    title: "Html 5",
+  },
+  {
+    id: 2,
+    name: "css",
+    title: "Css 3",
+  },
+  {
+    id: 3,
+    name: "javascript",
+    title: "JavaScript",
+  },
+  {
+    id: 4,
+    name: "react",
+    title: "React js",
+  },
+  {
+    id: 5,
+    name: "tailwind",
+    title: "Tailwind css",
+  },
+  {
+    id: 6,
+    name: "redux",
+    title: "Redux",
+  },
+  {
+    id: 7,
+    name: "typescript",
+    title: "Typescript",
+  },
+  {
+    id: 8,
+    name: "node",
+    title: "Node js",
+  },
+];
 export const Frontend_skill = [
   {
-    skill_name: "Html 5",
+    skill_name: "html",
     Image: "/html.png",
     width: 80,
     height: 80,
     title: "Html 5",
   },
   {
-    skill_name: "Css",
+    skill_name: "css",
     Image: "/css.png",
     width: 80,
     height: 80,
     title: "Css",
   },
   {
-    skill_name: "Java Script",
+    skill_name: "javascript",
     Image: "/js.png",
     width: 65,
     height: 65,
     title: "Java Script",
   },
   {
-    skill_name: "Tailwind Css",
+    skill_name: "tailwind",
     Image: "/tailwind.png",
     width: 80,
     height: 80,
@@ -131,35 +173,35 @@ export const Frontend_skill = [
     title: "Material UI",
   },*/
   {
-    skill_name: "React",
+    skill_name: "react",
     Image: "/react.png",
     width: 80,
     height: 80,
     title: "React",
   },
   {
-    skill_name: "Redux",
+    skill_name: "redux",
     Image: "/redux.png",
     width: 80,
     height: 80,
     title: "Redux",
   },
-  /*{
-    skill_name: "React Query",
-    Image: "/reactquery.png",
+  {
+    skill_name: "node",
+    Image: "/node-js.png",
     width: 80,
     height: 80,
-    title: "React Query",
-  },*/
+    title: "Node js",
+  },
   {
-    skill_name: "Type Script",
+    skill_name: "typescript",
     Image: "/ts.png",
     width: 80,
     height: 80,
     title: "Type Script",
   },
   {
-    skill_name: "Next js 13",
+    skill_name: "nextjs",
     Image: "/next.png",
     width: 80,
     height: 80,

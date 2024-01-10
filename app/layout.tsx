@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/main/Navbar";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const nebula = localFont({ src: "../fonts/Nebula-Regular.otf" });
 
 export const metadata: Metadata = {
   title: "Tiago Portfolio",
@@ -19,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
+        className={`${nebula.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
-        <StarsCanvas />
+        {/*<StarsCanvas />*/}
         <Navbar />
         {children}
       </body>
