@@ -6,7 +6,6 @@ import {
   GitHubLogoIcon,
 } from "@radix-ui/react-icons";
 import localFont from "next/font/local";
-import Link from "next/link";
 
 const nebula = localFont({ src: "../../fonts/Nebula-Regular.otf" });
 
@@ -19,10 +18,7 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-lg z-50 px-10">
       <div className="w-full flex flex-row items-center justify-between m-auto h-20">
-        <a
-          href="#about-me"
-          className="h-auto w-auto flex flex-row items-center"
-        >
+        <a href="#home" className="h-auto w-auto flex flex-row items-center">
           <span className="font-bold text-xl ml-[10px] text-gray-300">
             TIAGO
           </span>
