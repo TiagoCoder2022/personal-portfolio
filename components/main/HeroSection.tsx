@@ -39,7 +39,7 @@ const HeroSection = () => {
                 HELLO,
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
                   {" "}
-                  I am TIAGO{" "}
+                  I&apos;m TIAGO{" "}
                 </span>
                 <br></br>
                 <span className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
