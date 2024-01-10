@@ -8,7 +8,7 @@ import {
 } from "@/utils/motion";
 import { TypeAnimation } from "react-type-animation";
 
-const Home = () => {
+const HeroSection = () => {
   return (
     <section
       id="home"
@@ -92,4 +92,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HeroSection;
