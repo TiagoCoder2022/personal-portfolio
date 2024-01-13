@@ -107,3 +107,9 @@ html {
     53% 0
   );
 }
+
+@media screen and (max-width: 900px) {
+  .about-scyfi {
+    -webkit-clip-path: none;
+  }
+}
