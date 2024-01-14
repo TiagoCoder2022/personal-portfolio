@@ -28,25 +28,25 @@ const Navbar = () => {
           <div className="flex items-center w-full h-auto justify-between border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
             <a
               href="#about-me"
-              className="cursor-pointer text-cyan-500 hover:text-white"
+              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
             >
               About me
             </a>
             <a
               href="#skills"
-              className="cursor-pointer text-cyan-500 hover:text-white"
+              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="cursor-pointer text-cyan-500 hover:text-white"
+              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="cursor-pointer text-cyan-500 hover:text-white"
+              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
             >
               Contact
             </a>
@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="md:hidden  flex items-center">
           <button
             onClick={toggleNavbar}
-            className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-cyan-500 focus:outline-none"
+            className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-cyan-500 focus:outline-none transition-all duration-500 ease-in-out"
           >
             {isClick ? (
               <svg
@@ -105,7 +105,7 @@ const Navbar = () => {
         </div>
       </div>
       {isClick && (
-        <div className="md:hidden">
+        <div className="md:hidden transition duration-500 ease-in md:opacity-100 pb-8">
           <div className="pt-2 pb-3 space-y-4 sm:px-3 w-full">
             <div className="flex flex-row gap-5 mb-2">
               <a href="#">
@@ -120,25 +120,25 @@ const Navbar = () => {
             </div>
             <a
               href="#about-me"
-              className="cursor-pointer block text-cyan-500 hover:text-white"
+              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
             >
               About me
             </a>
             <a
               href="#skills"
-              className="cursor-pointer block text-cyan-500 hover:text-white"
+              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
             >
               Skills
             </a>
             <a
               href="#projects"
-              className="cursor-pointer block text-cyan-500 hover:text-white"
+              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="cursor-pointer block text-cyan-500 hover:text-white"
+              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
             >
               Contact
             </a>
