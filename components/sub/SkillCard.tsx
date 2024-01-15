@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 import React from "react";
 import { IconType } from "react-icons/lib";
@@ -53,7 +52,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ id, name, title }) => {
       gyroscope={true}
       className=" green-pink-gradient w-48 p-[1px] rounded-[20px] shadow-card z-[20]"
     >
-      <motion.div>
+      <div>
         <div className="bg-tertiary rounded-[20px] py-5 px-12 w-[192px] min-h-[192px] flex justify-evenly items-center flex-col">
           <IconComponent size={50} fill="#00e5e5" />
 
@@ -61,7 +60,7 @@ const SkillCard: React.FC<SkillCardProps> = ({ id, name, title }) => {
             {title}
           </h3>
         </div>
-      </motion.div>
+      </div>
     </Tilt>
   );
 };
