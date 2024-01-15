@@ -4,16 +4,21 @@ import { motion } from "framer-motion";
 
 interface TitleSectionProps {
   children: any;
-  variants: any;
 }
 
-const TitleSection = ({ children, variants }: TitleSectionProps) => {
+const TitleSection = ({ children }: TitleSectionProps) => {
   return (
-    <motion.div variants={variants}>
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-20">
+    <div>
+      <motion.h1
+        initial={{ opacity: 0, y: 100, scale: 0.5 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 100, scale: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-20"
+      >
         {children}
-      </h1>
-    </motion.div>
+      </motion.h1>
+    </div>
   );
 };
 
