@@ -8,7 +8,7 @@ interface TabButtonProps {
 
 const TabButton = ({ active, selectTab, children }: TabButtonProps) => {
   const buttonClasses = active
-    ? "text-white border-b  border-purple-500"
+    ? "text-white border-b  border-purple-500 shadow-lg shadow-[#2A0E61]/50"
     : "text-[#ADB7BE]";
   return (
     <button onClick={selectTab}>
