@@ -9,7 +9,7 @@ const Projects = () => {
       id="projects"
       className="flex flex-col items-center justify-center py-20 z-20"
     >
-      <TitleSection variants={slideInFromRight(0.5)}>My Projects</TitleSection>
+      <TitleSection>My Projects</TitleSection>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
           src="/NextWebsite.png"
