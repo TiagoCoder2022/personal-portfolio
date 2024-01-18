@@ -3,11 +3,7 @@ import Image from "next/image";
 import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import TitleSection from "./TitleSection";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
+import { motion } from "framer-motion";
 
 const TAB_DATA = [
   {
@@ -60,17 +56,30 @@ const About = () => {
       id="about-me"
       className="container mx-auto flex flex-col items-center justify-center z-[20]"
     >
-      <TitleSection variants={slideInFromLeft(0.5)}>About Me</TitleSection>
+      <TitleSection>About Me</TitleSection>
 
-      <div className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 xl:gap-14 sm:py-16 xl:px-16 about-scyfi">
-        <Image
-          src="/tiago-profile.jpg"
-          width={400}
-          height={400}
-          unoptimized
-          alt="Profile picture"
-          className="object-contain rounded-lg shadow-card"
-        />
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 1 }}
+        className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 xl:gap-14 sm:py-16 xl:px-16 about-scyfi"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 100, scale: 0.5 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 100, scale: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <Image
+            src="/tiago-profile.jpg"
+            width={400}
+            height={400}
+            unoptimized
+            alt="Profile picture"
+            className="object-contain rounded-lg shadow-card"
+          />
+        </motion.div>
         <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
           <p className="text-base lg:text-lg">
             I am a Full Stack web developer with a passion for creating
@@ -105,7 +114,7 @@ const About = () => {
             {TAB_DATA.find((t) => t.id === tab)?.content}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
