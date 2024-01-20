@@ -4,20 +4,30 @@ import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import TitleSection from "./TitleSection";
 import { motion } from "framer-motion";
+import { TechBadge } from "../sub/techBadge";
+import { skill_frontend, backend_skill } from "@/constants";
+
+const techBadgeAnimation = {
+  initial: { opacity: 0, scale: 0 },
+  whileInView: { opacity: 1, scale: 1 },
+  exit: { opacity: 0, scale: 0 },
+};
 
 const TAB_DATA = [
   {
-    title: "Skills",
-    id: "skills",
+    title: "Front-end",
+    id: "front-end",
     content: (
-      <ul>
-        <li>React</li>
-        <li>JavaScript</li>
-        <li>Node.js</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Tailwind</li>
-      </ul>
+      <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+        {skill_frontend.map((tech, i) => (
+          <TechBadge
+            name={tech.name}
+            key={tech.name}
+            {...techBadgeAnimation}
+            transition={{ duration: 0.2, delay: i * 0.1 }}
+          />
+        ))}
+      </div>
     ),
   },
   {
@@ -31,19 +41,25 @@ const TAB_DATA = [
     ),
   },
   {
-    title: "Courses",
-    id: "courses",
+    title: "Back-end",
+    id: "back-end",
     content: (
-      <ul>
-        <li>Full Stack Javascript - OneBitCode</li>
-        <li>Front-end Developer - Origamid</li>
-      </ul>
+      <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+        {backend_skill.map((tech, i) => (
+          <TechBadge
+            name={tech.name}
+            key={tech.name}
+            {...techBadgeAnimation}
+            transition={{ duration: 0.2, delay: i * 0.1 }}
+          />
+        ))}
+      </div>
     ),
   },
 ];
 
 const About = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("front-end");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id: any) => {
@@ -63,51 +79,57 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}
         transition={{ duration: 1 }}
-        className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 xl:gap-14 sm:py-16 xl:px-16 about-scyfi"
+        className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 lg:py-8 xl:px-16 about-scyfi"
       >
         <motion.div
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 100, scale: 0.5 }}
           transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex justify-center"
         >
           <Image
             src="/tiago-profile.jpg"
-            width={400}
-            height={400}
+            width={0}
+            height={0}
             unoptimized
             alt="Profile picture"
-            className="object-contain rounded-lg shadow-card"
+            className="object-contain rounded-lg shadow-card w-auto h-[400px] lg:w-auto lg:h-[500px]"
           />
         </motion.div>
         <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
           <p className="text-base lg:text-lg">
-            I am a Full Stack web developer with a passion for creating
+            Hello, my name is Tiago Alves and I am a full-stack developer
+            passionate about technology. With more than 2 years of experience.
+            My goal is to create beautiful and functional user interfaces, as
+            well as lead technical teams on challenging projects. I am always
+            open to new opportunities and challenges.
+            {/*I am a Full Stack web developer with a passion for creating
             interactive and responsive web aplications. I have experience
             working with javascript, React, Redux, Node.js, Express, PostgreSQL,
             HTML, CSS, and Git. I am a quick learner and I am always looking to
             expand my knowledge and skill set. I am a team player and I am
-            excited to work with others to create amazing applications.
+  excited to work with others to create amazing applications.*/}
           </p>
 
           <div className="flex flex-row mt-8">
             <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
+              selectTab={() => handleTabChange("front-end")}
+              active={tab === "front-end"}
             >
-              Skills
+              Front-end
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("back-end")}
+              active={tab === "back-end"}
+            >
+              Back-end
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("education")}
               active={tab === "education"}
             >
               Education
-            </TabButton>
-            <TabButton
-              selectTab={() => handleTabChange("courses")}
-              active={tab === "courses"}
-            >
-              Courses
             </TabButton>
           </div>
           <div className="mt-8">
