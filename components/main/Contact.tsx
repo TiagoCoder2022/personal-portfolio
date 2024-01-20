@@ -13,7 +13,7 @@ const Contact = () => {
       <TitleSection>Contact</TitleSection>
 
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row lg:items-center ">
           <div className="flex-1">
             <motion.div
               initial={{ opacity: 0, x: -100 }}
@@ -33,7 +33,7 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 1, delay: 0.7 }}
-              className="text-[45px] uppercase lg:text-[70px] leading-none mb-12 text-white "
+              className="text-[45px] uppercase lg:text-[70px] leading-none mb-12 text-white"
             >
               LET&apos;S WORK <br /> TOGETHER!
             </motion.h3>
@@ -43,7 +43,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 1, delay: 0.1 }}
-            className="flex-1 border flex flex-col rounded-md gap-y-6 pb-24 p-6 w-full items-start max-w-xl"
+            className="flex-1 border flex flex-col rounded-md gap-y-6 pb-16 p-6 w-full items-start max-w-xl"
           >
             <input
               className="bg-transparent border-b py-3 outline-none w-full text-white placeholder:text-cyan-400 focus:border-purple-500 transition-al"
