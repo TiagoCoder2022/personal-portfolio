@@ -80,6 +80,7 @@ const HeroSection = () => {
                 <p>Download CV</p>
               </motion.a>
               <motion.a
+                href="#contact"
                 variants={slideInFromRight(1)}
                 className="py-3 px-6 w-fit button-primary rounded-sm text-center text-white cursor-pointer button-scyfi"
               >
