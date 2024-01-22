@@ -4,7 +4,7 @@ import React, { useState, useTransition } from "react";
 import TabButton from "./TabButton";
 import TitleSection from "./TitleSection";
 import { motion } from "framer-motion";
-import { TechBadge } from "../sub/techBadge";
+import { TechBadge } from "../sub/TechBadge";
 import { skill_frontend, backend_skill } from "@/constants";
 
 const techBadgeAnimation = {
@@ -18,7 +18,7 @@ const TAB_DATA = [
     title: "Front-end",
     id: "front-end",
     content: (
-      <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+      <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[450px]">
         {skill_frontend.map((tech, i) => (
           <TechBadge
             name={tech.name}
@@ -44,7 +44,7 @@ const TAB_DATA = [
     title: "Back-end",
     id: "back-end",
     content: (
-      <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+      <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[450px]">
         {backend_skill.map((tech, i) => (
           <TechBadge
             name={tech.name}
@@ -79,22 +79,22 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}
         transition={{ duration: 1 }}
-        className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 lg:py-8 xl:px-16 about-scyfi"
+        className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 md:px-16 lg:py-8 lg:px-44 about-scyfi"
       >
         <motion.div
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 100, scale: 0.5 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex justify-center"
+          className="flex justify-center md:justify-start"
         >
           <Image
-            src="/tiago-profile.jpg"
+            src="/profile.jpeg"
             width={0}
             height={0}
             unoptimized
             alt="Profile picture"
-            className="object-contain rounded-lg shadow-card w-auto h-[400px] lg:w-auto lg:h-[500px]"
+            className="object-contain w-auto shadow-card rounded-lg h-[400px] lg:w-auto lg:h-[500px] profile-border"
           />
         </motion.div>
         <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
