@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
-import TitleSection from "../main/TitleSection";
+import TitleSection from "../sub/TitleSection";
 import { motion } from "framer-motion";
 
 const Projects = () => {

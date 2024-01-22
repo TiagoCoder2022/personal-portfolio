@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import TitleSection from "../main/TitleSection";
+import TitleSection from "../sub/TitleSection";
 import { skill_frontend, skill_fullstack } from "@/constants";
-import SkillCard from "./SkillCard";
+import SkillCard from "../sub/SkillCard";
 import { motion } from "framer-motion";
 
 const Skills = () => {

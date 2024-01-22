@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useTransition } from "react";
-import TabButton from "./TabButton";
-import TitleSection from "./TitleSection";
+import TabButton from "../sub/TabButton";
+import TitleSection from "../sub/TitleSection";
 import { motion } from "framer-motion";
 import { TechBadge } from "../sub/TechBadge";
 import { skill_frontend, backend_skill } from "@/constants";

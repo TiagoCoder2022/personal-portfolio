@@ -30,7 +30,7 @@ const ProjectCard = ({
         <h1 className="text-2xl font-semibold text-white">{title}</h1>
         <p className="mt-2 text-gray-300">{description}</p>
       </div>
-      <ul className="nav pb-8">
+      <ul className="project-btn pb-8">
         <li>
           <a href={href1} target="_blank">
             live

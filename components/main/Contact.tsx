@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import TitleSection from "../main/TitleSection";
+import TitleSection from "../sub/TitleSection";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 
 const Contact = () => {
