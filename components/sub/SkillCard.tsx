@@ -50,10 +50,10 @@ const SkillCard: React.FC<SkillCardProps> = ({ id, name, title }) => {
       transitionSpeed={1500}
       scale={1.02}
       gyroscope={true}
-      className=" green-pink-gradient w-48 p-[1px] rounded-[20px] shadow-card z-[20]"
+      className=" green-pink-gradient w-44 md:w-48 p-[1px] rounded-xl shadow-card z-[20]"
     >
       <div>
-        <div className="bg-tertiary rounded-[20px] py-5 px-12 w-[192px] min-h-[192px] flex justify-evenly items-center flex-col">
+        <div className="bg-tertiary rounded-xl py-5 px-12 w-[176px] min-h-[176px] md:w-[192px] md:min-h-[192px] flex justify-evenly items-center flex-col">
           <IconComponent size={50} fill="#00e5e5" />
 
           <h3 className="text-white text-[15px] font-bold text-center">

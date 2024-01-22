@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
-import SkillsCardTest from "./SkillCard";
 import TitleSection from "../main/TitleSection";
-import { skill_frontend } from "@/constants";
+import { skill_frontend, skill_fullstack } from "@/constants";
 import SkillCard from "./SkillCard";
 import { motion } from "framer-motion";
-import { slideInFromTop, slideInFromLeft } from "@/utils/motion";
 
 const Skills = () => {
   return (
@@ -14,8 +12,8 @@ const Skills = () => {
       className="container max-w-4xl mx-auto flex flex-col items-center justify-center"
     >
       <TitleSection> Skills</TitleSection>
-      <div className="justify-center flex flex-wrap gap-10">
-        {skill_frontend.map((skill, i) => (
+      <div className="justify-center grid grid-cols-2 gap-6  md:gap-8 md:grid-cols-3 lg:grid-cols-4 z-[20]">
+        {skill_fullstack.map((skill, i) => (
           <motion.div
             key={skill.id}
             initial={{ opacity: 0, x: -100 }}
