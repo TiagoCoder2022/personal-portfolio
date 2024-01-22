@@ -1,7 +1,8 @@
+"use client";
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
 import TitleSection from "../main/TitleSection";
-import { slideInFromRight } from "@/utils/motion";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
@@ -10,25 +11,37 @@ const Projects = () => {
       className="flex flex-col items-center justify-center py-20 z-20"
     >
       <TitleSection>My Projects</TitleSection>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+      <motion.div
+        initial={{ opacity: 0, y: 100, scale: 0.5 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        exit={{ opacity: 0, y: 100, scale: 0.5 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="h-full w-full grid grid-cols-1 md:grid-cols-3 gap-10 px-10"
+      >
         <ProjectCard
-          src="/NextWebsite.png"
-          title="Modern Next.js Portfolio"
-          description="Lore ipsum sit amet, conssecter adicispcnrf elitrs, sed de eiasons"
+          src="/fsw-store.png"
+          title="FSW Store app"
+          href1="https://fsw-store-beta.vercel.app/"
+          href2="https://github.com/TiagoCoder2022/fsw-store"
+          description="This is the computer peripherals e-commerce build in Next.js, Shadcn/ui, Tailwind, Prisma, Postgres"
         />
 
         <ProjectCard
-          src="/CardImage.png"
-          title="Interactive Website cards"
-          description="Lore ipsum sit amet, conssecter adicispcnrf elitrs, sed de eiasons"
+          src="/fsw-trips.png"
+          title="FSW Trips"
+          href1="https://fsw-trips-one.vercel.app/"
+          href2="https://github.com/TiagoCoder2022/fsw-trips"
+          description="Fullstack project for a travel and accommodation, build in Next.js, Typescript, Tailwind, Prisma, Next Auth"
         />
 
         <ProjectCard
-          src="/SpaceWebsite.png"
-          title="Space themed website"
-          description="Lore ipsum sit amet, conssecter adicispcnrf elitrs, sed de eiasons"
+          src="/god-of-war.png"
+          title="God of War landing page"
+          href1="https://god-of-war-ebon.vercel.app/"
+          href2="https://github.com/TiagoCoder2022/god-of-war"
+          description="This project is a showcase of the upcoming game God of War, developed using HTML, SCSS, and vanilla JavaScript."
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
