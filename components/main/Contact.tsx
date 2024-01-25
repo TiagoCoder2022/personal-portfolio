@@ -1,44 +1,42 @@
 "use client";
-import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import TitleSection from "../sub/TitleSection";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { sendEmail } from "@/sendEmail/sendEmail";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import toast from "react-hot-toast";
+
+const contactFormScghema = z.object({
+  name: z.string().min(3).max(100),
+  email: z.string().email(),
+  message: z.string().min(1).max(1000),
+});
+
+type ContactFormData = z.infer<typeof contactFormScghema>;
 
 const Contact = () => {
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const {
+    handleSubmit,
+    register,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormScghema),
+  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = {
-      email: e.target.email.value,
-      subject: e.target.subject.value,
-      message: e.target.message.value,
-    };
-
-    const JSONdata = JSON.stringify(data);
-    const endpoint = "/api/send";
-
-    // Form the request for sending data to the server.
-    const options = {
-      // The method is POST because we are sending data.
-      method: "POST",
-      // Tell the server we're sending JSON.
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // Body of the request is the JSON data we created above.
-      body: JSONdata,
-    };
-
-    const response = await fetch(endpoint, options);
-    const resData = await response.json();
-
-    if (response.status === 200) {
-      console.log("Message sent.");
-      setEmailSubmitted(true);
+  const onSubmit = async (data: ContactFormData) => {
+    try {
+      await axios.post("/api/contact", data);
+      toast.success("Message send successfully!");
+      reset();
+    } catch {
+      toast.error("An error occurred while sending the message!");
     }
   };
+
   return (
     <section
       id="contact"
@@ -77,34 +75,31 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 1, delay: 0.1 }}
-            action={async (formData) => {
-              await sendEmail(formData);
-            }}
+            onSubmit={handleSubmit(onSubmit)}
             className="flex-1 border flex flex-col rounded-md gap-y-6 pb-16 p-6 w-full items-start max-w-xl backdrop-blur-md"
           >
             <input
               className="bg-transparent border-b py-3 outline-none w-full text-white placeholder:text-cyan-400 focus:border-purple-500 transition-al"
-              type="email"
-              name="senderEmail"
+              type="text"
               maxLength={500}
-              required
-              placeholder="Your email"
+              placeholder="Your name"
+              {...register("name")}
             />
             <input
               className="bg-transparent border-b py-3 outline-none w-full text-white placeholder:text-cyan-400 focus:border-purple-500 transition-all"
-              type="text"
-              name="subject"
-              placeholder="Subject"
+              type="email"
+              {...register("email")}
+              placeholder="Your email"
             />
             <textarea
               className="bg-transparent border-b py-12 outline-none w-full text-white placeholder:text-cyan-400 resize-none mb-12 focus:border-purple-500 transition-all"
               placeholder="Your message"
-              name="message"
-              required
+              {...register("message")}
               maxLength={5000}
             ></textarea>
             <button
               type="submit"
+              disabled={isSubmitting}
               className="py-3 px-6 w-fit button-primary rounded-sm text-center text-white cursor-pointer button-scyfi"
             >
               Send message
