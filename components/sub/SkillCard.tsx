@@ -12,7 +12,7 @@ interface SkillCardProps {
   title: string | undefined;
 }
 
-const getIconForSkill = (skillName: string): IconType | null => {
+const getIconForSkill = (skillName: string | undefined): IconType | null => {
   switch (skillName) {
     case "html":
       return FaHtml5;
