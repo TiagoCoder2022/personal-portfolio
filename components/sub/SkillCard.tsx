@@ -7,9 +7,9 @@ import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiRedux } from "react-icons/si";
 
 interface SkillCardProps {
-  id: number;
-  name: string;
-  title: string;
+  id: number | undefined;
+  name: string | undefined;
+  title: string | undefined;
 }
 
 const getIconForSkill = (skillName: string): IconType | null => {
