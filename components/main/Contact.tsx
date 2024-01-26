@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import TitleSection from "../sub/TitleSection";
 import { SparklesIcon } from "@heroicons/react/24/solid";
-import { sendEmail } from "@/sendEmail/sendEmail";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
