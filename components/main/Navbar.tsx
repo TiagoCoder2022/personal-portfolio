@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import {
   LinkedInLogoIcon,
   InstagramLogoIcon,
@@ -10,13 +11,32 @@ import localFont from "next/font/local";
 const nebula = localFont({ src: "../../fonts/Nebula-Regular.otf" });
 
 const Navbar = () => {
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
   const [isClick, setIsClick] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
 
   const toggleNavbar = () => {
     setIsClick(!isClick);
   };
   return (
-    <nav className="w-full fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-lg z-50 px-10">
+    <motion.nav
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="w-full fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-lg z-50 px-10"
+    >
       <div className="w-full flex flex-row items-center justify-between m-auto h-20">
         <a href="#home" className="h-auto w-auto flex flex-row items-center">
           <span className="font-bold text-xl ml-[10px] text-gray-300">
@@ -145,7 +165,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 

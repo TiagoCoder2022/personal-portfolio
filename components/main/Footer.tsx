@@ -1,16 +1,15 @@
+import { HeartIcon } from "@radix-ui/react-icons";
 import React from "react";
-import { RxLinkedinLogo, RxInstagramLogo, RxGithubLogo } from "react-icons/rx";
 
 const Footer = () => {
   return (
-    <footer className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
-      <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex flex-col items-center justify-around flex-wrap">
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <h2>Footer</h2>
-          </div>
-        </div>
-      </div>
+    <footer className="w-full h-14 flex items-center justify-center bg-transparent text-cyan-500">
+      <span className="flex items-center gap-1.5 text-xs sm:text-sm text-cyan-500">
+        Made with
+        <HeartIcon className="text-cyan-500 fill-cyan-500" />
+        by
+        <strong className="font-medium">Tiago Alves</strong>
+      </span>
     </footer>
   );
 };
