@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import TitleSection from "../sub/TitleSection";
-import { skill_frontend, skill_fullstack } from "@/constants";
+import { skill_fullstack } from "@/constants";
 import SkillCard from "../sub/SkillCard";
 import { motion } from "framer-motion";
 
@@ -21,7 +21,7 @@ const Skills = () => {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.15, delay: i * 0.1 }}
           >
-            <SkillCard {...skill} />
+            <SkillCard id={skill.id} name={skill.name} title={skill.title} />
           </motion.div>
         ))}
       </div>
