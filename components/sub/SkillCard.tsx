@@ -7,12 +7,12 @@ import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiRedux } from "react-icons/si";
 
 interface SkillCardProps {
-  id: number | undefined;
-  name: string | undefined;
-  title: string | undefined;
+  id: number;
+  name: string;
+  title: string;
 }
 
-const getIconForSkill = (skillName: string | undefined): IconType | null => {
+const getIconForSkill = (skillName: string): IconType | null => {
   switch (skillName) {
     case "html":
       return FaHtml5;
@@ -36,7 +36,7 @@ const getIconForSkill = (skillName: string | undefined): IconType | null => {
 };
 
 const SkillCard: React.FC<SkillCardProps> = ({ id, name, title }) => {
-  const IconComponent = getIconForSkill(name);
+  const IconComponent = getIconForSkill(name!);
 
   if (!IconComponent) {
     // Handle case where the skill name doesn't match any known icon

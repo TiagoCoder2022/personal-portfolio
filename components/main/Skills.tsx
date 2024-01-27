@@ -21,7 +21,7 @@ const Skills = () => {
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.15, delay: i * 0.1 }}
           >
-            <SkillCard id={skill.id} name={skill.name} title={skill.title} />
+            <SkillCard id={skill.id!} name={skill.name!} title={skill.title!} />
           </motion.div>
         ))}
       </div>
