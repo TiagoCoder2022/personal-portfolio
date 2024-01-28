@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="flex flex-col h-[100vh] mx-auto md:container max-w-[1920px] z-20"
+      className="flex flex-col h-[100vh] mx-auto sm:container z-20"
     >
       <div
         className="absolute inset-0 h-full w-full object-cover"
