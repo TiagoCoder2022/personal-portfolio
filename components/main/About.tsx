@@ -62,14 +62,14 @@ const About = () => {
   const [tab, setTab] = useState("front-end");
   const [isPending, startTransition] = useTransition();
 
-  const handleTabChange = (id: any) => {
+  const handleTabChange = (id: string) => {
     startTransition(() => {
       setTab(id);
     });
   };
   return (
     <section
-      id="about-me"
+      id="about"
       className="container mx-auto flex flex-col items-center justify-center z-[20]"
     >
       <TitleSection>About Me</TitleSection>
@@ -79,7 +79,7 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 100 }}
         transition={{ duration: 1 }}
-        className="md:grid md:grid-cols-2 bg-tertiary  gap-8 items-center py-8 px-4 md:px-16 lg:py-8 lg:px-44 about-scyfi"
+        className="md:grid md:grid-cols-2 bg-tertiary rounded-lg  gap-8 items-center py-8 px-4 md:px-16 lg:py-8 lg:px-40 about-scyfi border-l border-b border-purple-500"
       >
         <motion.div
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
@@ -94,7 +94,7 @@ const About = () => {
             height={0}
             unoptimized
             alt="Profile picture"
-            className="object-contain w-auto shadow-card rounded-lg h-[400px] lg:w-auto lg:h-[500px] profile-border"
+            className="object-contain w-auto shadow-card rounded-lg h-[400px] lg:w-auto lg:h-[500px] profile-pictire-scyfi"
           />
         </motion.div>
         <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
