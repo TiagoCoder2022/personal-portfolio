@@ -2,10 +2,6 @@
 import React, { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
-import localFont from "next/font/local";
-
-const nebula = localFont({ src: "../../fonts/Nebula-Regular.otf" });
-
 const Navbar = () => {
   let Links = [
     { name: "ABOUT", link: "#about" },
