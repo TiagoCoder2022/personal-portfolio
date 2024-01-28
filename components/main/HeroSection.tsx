@@ -1,12 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { TypeAnimation } from "react-type-animation";
+import {
+  LinkedInLogoIcon,
+  InstagramLogoIcon,
+  GitHubLogoIcon,
+} from "@radix-ui/react-icons";
 
 const HeroSection = () => {
   return (
@@ -74,6 +75,8 @@ const HeroSection = () => {
 
             <div className="flex justify-start gap-4 md:gap-6 text-xs md:text-sm py-4">
               <motion.a
+                href="/resume.pdf"
+                download="Resume"
                 variants={slideInFromRight(1)}
                 className="py-3 px-6 rounded-sm w-fit button-primary text-center text-white cursor-pointer button-scyfi"
               >
@@ -87,6 +90,20 @@ const HeroSection = () => {
                 <p>Contact Me</p>
               </motion.a>
             </div>
+            <motion.div
+              variants={slideInFromLeft(0.9)}
+              className="flex flex-row justify-center md:justify-start gap-14 mt-6"
+            >
+              <a href="https://www.linkedin.com/in/tiago-dev" target="_blank">
+                <LinkedInLogoIcon className="text-gray-300 hover:text-white duration-500 h-6 w-6" />
+              </a>
+              <a href="https://github.com/TiagoCoder2022" target="_blank">
+                <GitHubLogoIcon className="text-gray-300 hover:text-white duration-500 h-6 w-6" />
+              </a>
+              <a href="https://www.instagram.com/_tiagoalves" target="_blank">
+                <InstagramLogoIcon className="text-gray-300 hover:text-white duration-500 h-6 w-6" />
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       </div>

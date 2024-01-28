@@ -1,19 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import {
-  LinkedInLogoIcon,
-  InstagramLogoIcon,
-  GitHubLogoIcon,
-} from "@radix-ui/react-icons";
-import localFont from "next/font/local";
-
-const nebula = localFont({ src: "../../fonts/Nebula-Regular.otf" });
 
 const Navbar = () => {
+  let Links = [
+    { name: "ABOUT", link: "#about" },
+    { name: "SKILLS", link: "#skills" },
+    { name: "PROJECTS", link: "#projects" },
+    { name: "CONTACT", link: "#contact" },
+  ];
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
-  const [isClick, setIsClick] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious();
@@ -24,9 +22,6 @@ const Navbar = () => {
     }
   });
 
-  const toggleNavbar = () => {
-    setIsClick(!isClick);
-  };
   return (
     <motion.nav
       variants={{
@@ -35,136 +30,74 @@ const Navbar = () => {
       }}
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="w-full fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-lg z-50 px-10"
+      className={`w-full fixed top-0 shadow-lg shadow-[#2A0E61]/50  z-50 px-10 transition-all duration-500 ease-in ${
+        open ? "bg-[#030014]" : "bg-[#03001417] backdrop-blur-lg"
+      }`}
     >
-      <div className="w-full flex flex-row items-center justify-between m-auto h-20">
-        <a href="#home" className="h-auto w-auto flex flex-row items-center">
-          <span className="font-bold text-xl ml-[10px] text-gray-300">
-            TIAGO
-          </span>
+      <div className="md:flex items-center py-6 justify-between md:px-10">
+        <a
+          href="#home"
+          className="font-bold text-2xl cursor-pointer flex items-center"
+        >
+          <span className="font-bold text-xl text-gray-300">TIAGO</span>
         </a>
 
-        <div className=" hidden w-[500px] h-full md:flex md:flex-row items-center justify-between">
-          <div className="flex items-center w-full h-auto justify-between border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <a
-              href="#about-me"
-              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
+        <div
+          onClick={() => setOpen(!open)}
+          className="absolute right-8 top-6 cursor-pointer md:hidden w-7 h-7 text-white hover:text-cyan-500 focus:outline-none transition-all duration-500 ease-in-out"
+        >
+          {open ? (
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              About me
-            </a>
-            <a
-              href="#skills"
-              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="cursor-pointer text-cyan-500 hover:text-white duration-500"
-            >
-              Contact
-            </a>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16m-7 6h7"
+              />
+            </svg>
+          )}
         </div>
 
-        <div className="md:flex flex-row gap-5 hidden ">
-          <a href="#">
-            <LinkedInLogoIcon className="text-[#fff] h-6 w-6" />
-          </a>
-          <a href="#">
-            <GitHubLogoIcon className="text-[#fff] h-6 w-6" />
-          </a>
-          <a href="#">
-            <InstagramLogoIcon className="text-[#fff] h-6 w-6" />
-          </a>
-        </div>
-
-        <div className="md:hidden  flex items-center">
-          <button
-            onClick={toggleNavbar}
-            className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-cyan-500 focus:outline-none transition-all duration-500 ease-in-out"
-          >
-            {isClick ? (
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+        <ul
+          className={`md:flex md:items-center md:pb-0 pb-12  absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+            open
+              ? "top-12 bg-[#030014] shadow-lg shadow-[#2A0E61]/50"
+              : "top-[-490px]"
+          }`}
+        >
+          {Links.map((link) => (
+            <li key={link.name} className="md:ml-16 md:my-0 my-7 font-semibold">
+              <a
+                href={link.link}
+                className="relative text-cyan-500 text-lg hover:text-white duration-500 nav-btn"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            ) : (
-              <svg
-                className="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            )}
-          </button>
-        </div>
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       </div>
-      {isClick && (
-        <div className="md:hidden transition duration-500 ease-in md:opacity-100 pb-8">
-          <div className="pt-2 pb-3 space-y-4 sm:px-3 w-full">
-            <div className="flex flex-row gap-5 mb-2">
-              <a href="#">
-                <LinkedInLogoIcon className="text-[#fff] h-6 w-6" />
-              </a>
-              <a href="#">
-                <GitHubLogoIcon className="text-[#fff] h-6 w-6" />
-              </a>
-              <a href="#">
-                <InstagramLogoIcon className="text-[#fff] h-6 w-6" />
-              </a>
-            </div>
-            <a
-              href="#about-me"
-              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
-            >
-              About me
-            </a>
-            <a
-              href="#skills"
-              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
-            >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="cursor-pointer block text-cyan-500 hover:text-white duration-500"
-            >
-              Contact
-            </a>
-          </div>
-        </div>
-      )}
     </motion.nav>
   );
 };
