@@ -1,11 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
+import { slideInFromLeft, slideInFromRight } from "@/utils/motion";
 import { TypeAnimation } from "react-type-animation";
 import {
   LinkedInLogoIcon,
@@ -79,6 +75,8 @@ const HeroSection = () => {
 
             <div className="flex justify-start gap-4 md:gap-6 text-xs md:text-sm py-4">
               <motion.a
+                href="/resume.pdf"
+                download="Resume"
                 variants={slideInFromRight(1)}
                 className="py-3 px-6 rounded-sm w-fit button-primary text-center text-white cursor-pointer button-scyfi"
               >
