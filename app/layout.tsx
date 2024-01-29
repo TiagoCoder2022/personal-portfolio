@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import StarsCanvas from "@/components/main/StarBackground";
+// import StarsCanvas from "@/components/main/StarBackground";
 import Navbar from "@/components/main/Navbar";
 import localFont from "next/font/local";
 import { Toaster } from "@/components/sub/toaster";
@@ -23,7 +23,7 @@ export default function RootLayout({
         className={`${nebula.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
       >
         <Toaster />
-        <StarsCanvas />
+        {/* <StarsCanvas /> */}
         <Navbar />
         {children}
       </body>
