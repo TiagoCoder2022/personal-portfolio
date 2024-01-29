@@ -17,7 +17,7 @@ const ProjectCard = ({
   href2,
 }: ProjectCardProps) => {
   return (
-    <div className="relative overflow-hidden mx-w-[500px] rounded-lg shadow-lg border border-[#2A0E61] bg-tertiary">
+    <div className="relative overflow-hidden mx-w-[500px] rounded-lg border border-[#2A0E61] bg-tertiary shadow-card">
       <Image
         src={src}
         alt={title}
