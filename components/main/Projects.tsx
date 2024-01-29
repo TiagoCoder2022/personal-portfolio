@@ -8,7 +8,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20 z-20"
+      className="container mx-auto flex flex-col items-center justify-center py-20 z-20"
     >
       <TitleSection>My Projects</TitleSection>
       <motion.div
@@ -16,7 +16,7 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 100, scale: 0.5 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="h-full w-full grid grid-cols-1 md:grid-cols-3 gap-10 px-10"
+        className="grid grid-cols-1 md:grid-cols-3 gap-10"
       >
         <ProjectCard
           src="/fsw-store.png"
