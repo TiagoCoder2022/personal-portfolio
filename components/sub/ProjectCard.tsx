@@ -17,7 +17,7 @@ const ProjectCard = ({
   href2,
 }: ProjectCardProps) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] bg-tertiary">
+    <div className="relative overflow-hidden mx-w-[500px] rounded-lg shadow-lg border border-[#2A0E61] bg-tertiary">
       <Image
         src={src}
         alt={title}
@@ -27,8 +27,10 @@ const ProjectCard = ({
       />
 
       <div className="relative p-4">
-        <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        <p className="mt-2 text-gray-300">{description}</p>
+        <h1 className="text-lg md:text-2xl font-semibold text-white">
+          {title}
+        </h1>
+        <p className="mt-2 text-sm md:text-base text-gray-300">{description}</p>
       </div>
       <ul className="project-btn pb-8">
         <li>
