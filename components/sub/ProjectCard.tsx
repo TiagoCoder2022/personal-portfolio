@@ -27,12 +27,12 @@ const ProjectCard = ({
       />
 
       <div className="relative p-4">
-        <h1 className="text-lg md:text-2xl font-semibold text-white">
+        <h1 className="text-lg md:text-xl font-semibold text-white flex justify-center">
           {title}
         </h1>
         <p className="mt-2 text-sm md:text-base text-gray-300">{description}</p>
       </div>
-      <ul className="project-btn pb-8">
+      <ul className="project-btn pb-4 text-sm md:text-lg">
         <li>
           <a href={href1} target="_blank">
             live
