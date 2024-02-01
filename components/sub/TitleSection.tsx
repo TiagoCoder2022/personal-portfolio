@@ -13,7 +13,7 @@ const TitleSection = ({ children }: TitleSectionProps) => {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 100, scale: 0.5 }}
       transition={{ duration: 0.5, delay: 0.5 }}
-      className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-20"
+      className="font-semibold text-[1.8rem] md:text-[2.5rem] text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 mb-20"
     >
       {children}
     </motion.h1>
