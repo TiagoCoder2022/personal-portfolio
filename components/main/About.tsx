@@ -99,17 +99,12 @@ const About = () => {
         </motion.div>
         <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
           <p className="text-base lg:text-lg">
-            Hello, my name is Tiago Alves and I am a full-stack developer
-            passionate about technology. With more than 2 years of experience.
-            My goal is to create beautiful and functional user interfaces, as
-            well as lead technical teams on challenging projects. I am always
-            open to new opportunities and challenges.
-            {/*I am a Full Stack web developer with a passion for creating
-            interactive and responsive web aplications. I have experience
-            working with javascript, React, Redux, Node.js, Express, PostgreSQL,
-            HTML, CSS, and Git. I am a quick learner and I am always looking to
-            expand my knowledge and skill set. I am a team player and I am
-  excited to work with others to create amazing applications.*/}
+            Hi, I&apos;m Tiago Alves, a dedicated full-stack developer
+            passionate about crafting interactive web applications. With both
+            creative and logical sides, I found the perfect fit in web
+            development during college. I&apos;m always eager to learn and grow,
+            staying current with emerging technologies. As a team player,
+            I&apos;m excited to collaborate and bring your concepts to life!
           </p>
 
           <div className="flex flex-row mt-8">

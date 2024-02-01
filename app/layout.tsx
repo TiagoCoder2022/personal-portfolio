@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nebula.className} bg-[#030014]`}>
+      <body className={`${nebula.className} bg-[#030014] overflow-x-hidden`}>
         <Toaster />
         {/* <StarsCanvas /> */}
         <Navbar />

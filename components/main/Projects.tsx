@@ -16,7 +16,7 @@ const Projects = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 100, scale: 0.5 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-10"
+        className="px-5 grid grid-cols-1 md:grid-cols-3 gap-10"
       >
         <ProjectCard
           src="/fsw-store.png"
