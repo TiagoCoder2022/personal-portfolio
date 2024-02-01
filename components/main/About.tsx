@@ -89,7 +89,7 @@ const About = () => {
           className="flex justify-center md:justify-start"
         >
           <Image
-            src="/profile.jpeg"
+            src="/profile2.png"
             width={0}
             height={0}
             unoptimized
