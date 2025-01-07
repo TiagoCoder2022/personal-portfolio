@@ -13,12 +13,12 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="flex flex-col h-[100vh] mx-auto sm:container z-20"
+      className="flex flex-col h-[100vh] sm:container z-20"
     >
       <div
         className="absolute inset-0 h-full w-full object-cover"
         style={{
-          backgroundImage: "url('/contact-bg.jpg')",
+          backgroundImage: "url('/hero-bg.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -30,9 +30,9 @@ const HeroSection = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          className="flex flex-col w-full"
+          className="flex flex-col justify-center w-full"
         >
-          <div className="h-full w-full  flex flex-col">
+          <div className="flex flex-col h-full w-full justify-center text-center">
             <motion.div
               variants={slideInFromLeft(0.5)}
               className="flex flex-col font-bold text-white w-auto lg:h-auto"
@@ -64,18 +64,20 @@ const HeroSection = () => {
               </span>
             </motion.div>
 
-            <motion.p
-              variants={slideInFromLeft(0.8)}
-              className="lg:text-sm xl:text-xl text-center md:text-start mt-10 max-w-xs  lg:max-w-md xl:max-w-xl text-[#ADB7BE] text-sm"
-            >
-              {" "}
-              I&apos;m a Full Stack Software Developer with experience in
-              website, Check out my projects and skills.
-            </motion.p>
+            <div className="flex justify-center text-center">
+              <motion.p
+                variants={slideInFromLeft(0.8)}
+                className="flex lg:text-sm xl:text-xl mt-10 max-w-xs  lg:max-w-md xl:max-w-xl text-[#ADB7BE] text-sm antialiased"
+              >
+                {" "}
+                I&apos;m a Full Stack Software Developer with experience in
+                website, Check out my projects and skills.
+              </motion.p>
+            </div>
 
-            <div className="flex justify-start gap-4 md:gap-6 text-xs md:text-sm py-4">
+            <div className="flex justify-center gap-4 md:gap-6 text-xs md:text-sm py-4">
               <motion.a
-                href="/resume.pdf"
+                href="/Full-Stack.pdf"
                 download="Resume"
                 variants={slideInFromRight(1)}
                 className="py-3 px-6 rounded-sm w-fit button-primary text-center text-white cursor-pointer button-scyfi"
@@ -92,7 +94,7 @@ const HeroSection = () => {
             </div>
             <motion.div
               variants={slideInFromLeft(0.9)}
-              className="flex flex-row justify-center md:justify-start gap-14 mt-6"
+              className="flex flex-row justify-center gap-14 mt-6"
             >
               <a href="https://www.linkedin.com/in/tiago-dev" target="_blank">
                 <LinkedInLogoIcon className="text-gray-300 hover:text-white duration-500 h-6 w-6" />

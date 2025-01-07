@@ -35,11 +35,11 @@ const Projects = () => {
         />
 
         <ProjectCard
-          src="/god-of-war.png"
-          title="God of War landing page"
-          href1="https://god-of-war-ebon.vercel.app/"
-          href2="https://github.com/TiagoCoder2022/god-of-war"
-          description="This project is a showcase of the upcoming game God of War, developed using HTML, SCSS, and vanilla JavaScript."
+          src="/fsw-foods.png"
+          title="FSW Foods"
+          href1="https://fsw-foods-chi.vercel.app/"
+          href2="https://github.com/TiagoCoder2022/FSW-Foods"
+          description="This is an iFood clone app, developed Next.js, Shadcn/ui, Tailwind, Prisma, Postgres"
         />
       </motion.div>
     </section>
