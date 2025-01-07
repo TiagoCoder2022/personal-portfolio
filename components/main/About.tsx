@@ -98,16 +98,17 @@ const About = () => {
           />
         </motion.div>
         <div className="text-white py-10 md:mt-0 text-left flex flex-col h-full">
-          <p className="text-base lg:text-lg antialiased">
-            Hi, I&apos;m Tiago Alves, a dedicated full-stack developer
-            passionate about crafting interactive web applications. With both
-            creative and logical sides, I found the perfect fit in web
-            development during college. I&apos;m always eager to learn and grow,
-            staying current with emerging technologies. As a team player,
-            I&apos;m excited to collaborate and bring your concepts to life!
+          <p className="text-sm md:text-base lg:text-lg">            
+            Passionate about technology, I have 2 years of experience in web development with 
+            a focus on React.js, Next.js, JavaScript, and TypeScript, along with solid knowledge of Node.js and databases.
+          </p>          
+          <br/>
+          <p className="text-sm md:text-base lg:text-lg">
+            My goal is to grow as a Full Stack Developer, enhance my skills, and deliver innovative and efficient solutions. 
+            I&apos;m constantly seeking to learn and ready to contribute to impactful projects.
           </p>
 
-          <div className="flex flex-row mt-8 antialiased">
+          <div className="flex flex-row mt-8">
             <TabButton
               selectTab={() => handleTabChange("front-end")}
               active={tab === "front-end"}
