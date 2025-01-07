@@ -23,14 +23,14 @@ const ProjectCard = ({
         alt={title}
         width={1000}
         height={1000}
-        className="w-full object-cover h-[280px]"
+        className="h-auto max-h-[70%] w-auto transform object-fit duration-300 ease-in-out motion-safe:hover:scale-110"
       />
 
       <div className="relative p-4">
-        <h1 className="text-lg md:text-xl font-semibold text-white flex justify-center">
+        <h1 className="text-lg md:text-xl font-semibold text-white flex justify-center antialiased">
           {title}
         </h1>
-        <p className="mt-2 text-sm md:text-base text-gray-300">{description}</p>
+        <p className="mt-2 text-sm md:text-base text-gray-300 antialiased">{description}</p>
       </div>
       <ul className="project-btn pb-4 text-sm md:text-lg">
         <li>
